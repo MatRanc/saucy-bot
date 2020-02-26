@@ -19,4 +19,5 @@ async def on_message(message):
             else: 
                 await channel.send(messageSender+" I think you meant #music-commands, headass.")
 
+#API used: https://discordpy.readthedocs.io/en/latest/
 client.run(discord_bot_token)
