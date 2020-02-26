@@ -4,6 +4,8 @@ from bot_token import *
 
 client = discord.Client()
 
+print("Bot is live\nUse control+C to terminate")
+
 @client.event
 async def on_message(message):
 
@@ -12,6 +14,9 @@ async def on_message(message):
 
     print(message.author,"-",message.content)
     if message.content.startswith("/play"):
-            await channel.send(messageSender+" I think you meant #music-commands, headass.")
+            if message.channel.name == "music-commands":
+                print("OK")
+            else: 
+                await channel.send(messageSender+" I think you meant #music-commands, headass.")
 
 client.run(discord_bot_token)
