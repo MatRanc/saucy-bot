@@ -6,7 +6,7 @@ from bot_token import *
 #Bot's unique user id
 bot_user_id = 681980762903543902
 #Unique id for music channel
-music_channel_id = 682050301263478802
+music_channel_id = 532321197988511744
 
 client = discord.Client()
 
@@ -43,4 +43,5 @@ client.run(discord_bot_token)
 
 '''Todo: 
     allow channel id to be a list
+    make music channel id collection based off name
 '''
