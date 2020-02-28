@@ -30,17 +30,12 @@ async def on_message(message):
     if message.content.startswith(tuple(playCommands)):
         if message.channel.id != music_channel_id:
             await message.delete()
-            await channel.send(message_sender+" I think you meant "+music_channel.mention+" , headass.")
+            await channel.send(message_sender+" Please use "+music_channel.mention+" for music commands.")
 
     #delete bot messages
-    '''
-    Need to fix, its an embed not a message.
-    
-    print(message.author.name)
-    if message.author.name == "Rythem":
-        if message.channel.id != music_channel_id:
+    if message.channel.id != music_channel_id:
+        if message.author.name == "Rythm":
             await message.delete()
-    '''
 
     #bruh message
     if "bruh" in message.content:
@@ -57,7 +52,7 @@ if not discord_bot_token:
 #run
 client.run(discord_bot_token)
 
-#API: https://discordpy.readthedocs.io/en/latest/
+#API used: https://discordpy.readthedocs.io/en/latest/
 
 '''Todo:
     allow channel id to be a list
