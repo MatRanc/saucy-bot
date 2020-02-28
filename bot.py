@@ -27,7 +27,7 @@ async def on_message(message):
     if message.content.startswith(tuple(playCommands)):
         if message.channel.id == music_channel_id:
             pass
-        else: 
+        else:
             await channel.send(message_sender+" I think you meant "+music_channel.mention+" , headass.")
 
     #bruh message
@@ -37,11 +37,16 @@ async def on_message(message):
         else:
             await channel.send("bruh")
 
+#Check for bot token
+if not discord_bot_token:
+    print("ERROR: A bot token is required to run.\nPlease get one from the Discord Developer Portal")
+    sys_exit()
+
 client.run(discord_bot_token)
 
 #API: https://discordpy.readthedocs.io/en/latest/
 
-'''Todo: 
+'''Todo:
     allow channel id to be a list
     make music channel id collection based off name
 '''
