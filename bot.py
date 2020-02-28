@@ -6,7 +6,9 @@ from bot_token import *
 #Bot's unique user id
 bot_user_id = 681980762903543902
 #Unique id for music channel
-music_channel_id = 532321197988511744
+music_channel_id = 682050301263478802
+#682050301263478802 = test server
+#532321197988511744 = main
 
 client = discord.Client()
 
@@ -28,6 +30,7 @@ async def on_message(message):
         if message.channel.id == music_channel_id:
             pass
         else:
+            await message.delete()
             await channel.send(message_sender+" I think you meant "+music_channel.mention+" , headass.")
 
     #bruh message
