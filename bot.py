@@ -5,8 +5,9 @@ from bot_token import *
 
 #Bot's unique user id
 bot_user_id = 681980762903543902
+
 #Unique id for music channel
-music_channel_id = 682050301263478802
+music_channel_id = 532321197988511744
 #682050301263478802 = test server
 #532321197988511744 = main
 
@@ -25,13 +26,21 @@ async def on_message(message):
     music_channel = client.get_channel(music_channel_id)
 
     #play command reminder
-    playCommands = ["/play", "//play", "!play", "?play"]
+    playCommands = ["/play", "//play", "!play", "?play", "/skip", "/queue"]
     if message.content.startswith(tuple(playCommands)):
-        if message.channel.id == music_channel_id:
-            pass
-        else:
+        if message.channel.id != music_channel_id:
             await message.delete()
             await channel.send(message_sender+" I think you meant "+music_channel.mention+" , headass.")
+
+    #delete bot messages
+    '''
+    Need to fix, its an embed not a message.
+    
+    print(message.author.name)
+    if message.author.name == "Rythem":
+        if message.channel.id != music_channel_id:
+            await message.delete()
+    '''
 
     #bruh message
     if "bruh" in message.content:
@@ -45,6 +54,7 @@ if not discord_bot_token:
     print("ERROR: A bot token is required to run.\nPlease get one from the Discord Developer Portal")
     sys_exit()
 
+#run
 client.run(discord_bot_token)
 
 #API: https://discordpy.readthedocs.io/en/latest/
