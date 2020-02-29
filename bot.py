@@ -5,11 +5,14 @@ from bot_token import *
 
 #Bot's unique user id
 bot_user_id = 681980762903543902
-
 #Unique id for music channel
 music_channel_id = 532321197988511744
 #682050301263478802 = test server
 #532321197988511744 = main
+say_channel_id = 683191210302504990
+#683191210302504990 = say channel on saucyclub
+general_channel_id = 248966523190771714
+#248966523190771714 = general channel on saucyclub
 
 client = discord.Client()
 
@@ -43,6 +46,14 @@ async def on_message(message):
             pass
         else:
             await channel.send("bruh")
+
+    #repeat anything said in #say to #general as bot
+    if message.channel.id == say_channel_id:
+        if message.content.startswith(IGNORE):
+            pass
+        else:
+            general_channel = client.get_channel(general_channel_id)
+            await general_channel.send(message.content)
 
 #Check for bot token
 if not discord_bot_token:
