@@ -49,7 +49,7 @@ async def on_message(message):
 
     #repeat anything said in #say to #general as bot
     if message.channel.id == say_channel_id:
-        if message.content.startswith(IGNORE):
+        if message.content.startswith("IGNORE"):
             pass
         else:
             general_channel = client.get_channel(general_channel_id)
