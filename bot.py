@@ -1,6 +1,7 @@
 # © mat 2020
 #https://github.com/MatRanc/saucy-bot
 import discord
+import random
 from bot_token import *
 
 #Bot's unique user id
@@ -55,6 +56,13 @@ async def on_message(message):
             general_channel = client.get_channel(general_channel_id)
             await general_channel.send(message.content)
 
+    #eight ball
+    eightball_responses = ["Yes", "No", "Probably", "No way", "Yessir", "Not a chance", "idk ask obama", "bruh really"]
+    if message.channel.id != music_channel_id:
+        if message.content.startswith("is"):
+            await channel.send(random.choice(eightball_responses))
+
+
 #Check for bot token
 if not discord_bot_token:
     print("ERROR: A bot token is required to run.\nPlease get one from the Discord Developer Portal")
@@ -68,4 +76,6 @@ client.run(discord_bot_token)
 '''Todo:
     allow channel id to be a list
     make music channel id collection based off name
+
+    MAKE CHANNEL IDS LIST-ABLE
 '''
