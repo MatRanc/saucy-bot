@@ -58,7 +58,7 @@ async def on_message(message):
 
     #eight ball
     eightball_prompts = ["is", "Is", "8ball"]
-    eightball_responses = ["Yes", "No", "Probably", "No way", "Yessir", "Not a chance", "idk ask obama", "bruh really", "Nope", "Keep wishing", "All truth is relative :flushed:", "brb commiting a mass genocide", "is israel a legitimate state?"]
+    eightball_responses = ["Yes", "No", "Probably", "No way", "Yessir", "Not a chance", "idk ask obama", "bruh really", "Nope", "Keep wishing", "All truth is relative :flushed:", "brb commiting a mass genocide", "is israel a legitimate state?", "According to my sources, yes.", "It seems as though the only logical answer is yes."]
     if message.channel.id != music_channel_id:
         if message.content.startswith(tuple(eightball_prompts)):
             await channel.send(random.choice(eightball_responses))
