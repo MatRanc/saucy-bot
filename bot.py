@@ -63,6 +63,11 @@ async def on_message(message):
         if message.content.startswith(tuple(eightball_prompts)):
             await channel.send(random.choice(eightball_responses))
 
+    #if message contains, ping
+    if "jacob" in message.content:
+        if message_sender != bot_user_id:
+            jacob = client.get_user(330462798817656847)
+            await channel.send(jacob.mention)
 
 #Check for bot token
 if not discord_bot_token:
