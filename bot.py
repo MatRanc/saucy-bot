@@ -66,6 +66,7 @@ async def on_message(message):
     #if message contains, ping
     if "jacob" in message.content:
         if message_sender != bot_user_id:
+            #inset user id for person you want to ping
             jacob = client.get_user(330462798817656847)
             await channel.send(jacob.mention)
 
