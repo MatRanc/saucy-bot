@@ -92,11 +92,9 @@ client.run(token_string)
 
 #API used: https://discordpy.readthedocs.io/en/latest/
 
-'''Todo:
-    allow channel id to be a list
-    make music channel id collection based off name
-
-    MAKE CHANNEL IDS LIST-ABLE
-
-    add different emojis for swag ratings
+'''
+    Todo:
+    -allow channel id to be in a list (so that you cant only have one channel for ignoring messages)
+    -make music channel id collection based off name and not channel id
+    -add different emojis for swag ratings
 '''
