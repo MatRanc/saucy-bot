@@ -82,7 +82,7 @@ async def on_message(message):
         await channel.send("swag meter says "+random_number_1_100+"% swag :sunglasses:")
 
 #Check for bot token
-if not discord_bot_token:
+if not token_string:
     print("ERROR: A bot token is required to run.\nPlease get one from the Discord Developer Portal")
     sys_exit()
 
