@@ -2,9 +2,7 @@
 #https://github.com/MatRanc/saucy-bot
 import discord
 import random
-
-from random import *
-from bot_token import *
+from bot_token import token_string
 
 #Bot's unique user id
 bot_user_id = 681980762903543902
@@ -74,12 +72,12 @@ async def on_message(message):
 
     #send now playing dont care for certain people
     if message.author.id == 330462798817656847:
-        if randint(1,3) == 1:
+        if random.randint(1,3) == 1:
             await channel.send("now ᴘʟᴀʏɪɴɢ: Who Asked (Feat: Nobody Did) ───────────:white_circle:────── ◄◄⠀▐▐⠀►► 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼⠀───○ :loud_sound:")
 
     #swag meter
     swag_prompts = ["how swag is", "How swag is"]
-    random_number_1_100 = str(randint(1, 100))
+    random_number_1_100 = str(random.randint(1, 100))
     if message.content.startswith(tuple(swag_prompts)):
         await channel.send("swag meter says "+random_number_1_100+"% swag :sunglasses:")
 
@@ -89,7 +87,7 @@ if not discord_bot_token:
     sys_exit()
 
 #run
-client.run(discord_bot_token)
+client.run(token_string)
 
 #API used: https://discordpy.readthedocs.io/en/latest/
 
