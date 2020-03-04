@@ -2,6 +2,8 @@
 #https://github.com/MatRanc/saucy-bot
 import discord
 import random
+
+from random import *
 from bot_token import *
 
 #Bot's unique user id
@@ -69,6 +71,12 @@ async def on_message(message):
             #inset user id for person you want to ping
             jacob = client.get_user(330462798817656847)
             await channel.send(jacob.mention)
+
+    #swag meter
+    swag_prompts = ["how swag is", "How swag is"]
+    random_number_1_100 = str(randint(1, 100))
+    if message.content.startswith(tuple(swag_prompts)):
+        await channel.send("swag meter says "+random_number_1_100+"% swag :sunglasses:")
 
 #Check for bot token
 if not discord_bot_token:
