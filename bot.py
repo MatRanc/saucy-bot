@@ -72,6 +72,11 @@ async def on_message(message):
             jacob = client.get_user(330462798817656847)
             await channel.send(jacob.mention)
 
+    #send now playing dont care for certain people
+    if message.author.id == 330462798817656847:
+        if randint(1,3) == 1:
+            await channel.send("now ᴘʟᴀʏɪɴɢ: Who Asked (Feat: Nobody Did) ───────────:white_circle:────── ◄◄⠀▐▐⠀►► 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼⠀───○ :loud_sound:")
+
     #swag meter
     swag_prompts = ["how swag is", "How swag is"]
     random_number_1_100 = str(randint(1, 100))
@@ -93,4 +98,6 @@ client.run(discord_bot_token)
     make music channel id collection based off name
 
     MAKE CHANNEL IDS LIST-ABLE
+
+    add different emojis for swag ratings
 '''
