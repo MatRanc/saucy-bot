@@ -66,14 +66,15 @@ async def on_message(message):
     #if message contains, ping
     if "jacob" in message.content:
         if message_sender != bot_user_id:
-            #inset user id for person you want to ping
-            jacob = client.get_user(330462798817656847)
-            await channel.send(jacob.mention)
+            jacob = client.get_user(330462798817656847) #inset user id for person you want to ping
+            await channel.send(jacob.mention) #mention that person
 
     #send now playing dont care for certain people
     if message.author.id == 330462798817656847:
         if random.randint(1,3) == 1:
             await channel.send("now ᴘʟᴀʏɪɴɢ: Who Asked (Feat: Nobody Did) ───────────:white_circle:────── ◄◄⠀▐▐⠀►► 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼⠀───○ :loud_sound:")
+        #print that the user(+tag) did not trigger the message
+        else: print("user "+message.author.name+"#"+message.author.discriminator+" did not trigger the \"who asked\" function")
 
     #swag meter
     swag_prompts = ["how swag is", "How swag is"]
