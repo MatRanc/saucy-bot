@@ -23,7 +23,8 @@ print("-------\nBot is live\nUse control+C to terminate\n-------")
 async def on_message(message):
 
     #print all messages
-    print(message.author,"-",message.content)
+    if message.author.id != 155149108183695360: #ignores dyno bot
+        print(message.author,"-",message.content)
 
     channel = message.channel
     message_sender = message.author.mention
@@ -78,9 +79,25 @@ async def on_message(message):
 
     #swag meter
     swag_prompts = ["how swag is", "How swag is"]
-    random_number_1_100 = str(random.randint(1, 100))
+    swag_random_number = random.randint(1, 101)
     if message.content.startswith(tuple(swag_prompts)):
-        await channel.send("swag meter says "+random_number_1_100+"% swag :sunglasses:")
+        #0-20
+        if 20 >= swag_random_number >=0:
+            await channel.send("swag meter says "+str(swag_random_number)+"% swag :face_vomiting:")
+        #21-40
+        if 40 >= swag_random_number >=21:
+            await channel.send("swag meter says "+str(swag_random_number)+"% swag :grimacing:")
+        #41-60
+        if 60 >= swag_random_number >=41:
+            await channel.send("swag meter says "+str(swag_random_number)+"% swag :pensive:")
+        #61-80
+        if 80 >= swag_random_number >=61:
+            await channel.send("swag meter says "+str(swag_random_number)+"% swag :sunglasses:")
+        #81-100
+        if 100 >= swag_random_number >=81:
+            await channel.send("swag meter says "+str(swag_random_number)+"% swag :partying_face:")
+        if 101 == swag_random_number:
+            await channel.send("swag meter says "+str(swag_random_number)+"% swag :pog:")
 
 #Check for bot token
 if not token_string:
