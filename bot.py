@@ -2,6 +2,7 @@
 #https://github.com/MatRanc/saucy-bot
 import discord
 import random
+import datetime
 from bot_token import token_string
 
 #Bot's unique user id
@@ -22,9 +23,14 @@ print("-------\nBot is live\nUse control+C to terminate\n-------")
 @client.event
 async def on_message(message):
 
+    #get time of message
+    message_time_hour = str(datetime.datetime.now().time().hour)
+    message_time_minute = str(datetime.datetime.now().time().minute)
+    message_time_second = str(datetime.datetime.now().time().second)
+
     #print all messages
     if message.author.id != 155149108183695360: #ignores dyno bot
-        print(message.author,"-",message.content)
+        print("["+message_time_hour+":"+message_time_minute+":"+message_time_second+"]", message.author,"-",message.content)
 
     channel = message.channel
     message_sender = message.author.mention
@@ -59,7 +65,7 @@ async def on_message(message):
 
     #eight ball
     eightball_prompts = ["is", "Is", "8ball"]
-    eightball_responses = ["Yes", "No", "Probably", "No way", "Yessir", "Not a chance", "idk ask obama", "bruh really", "Nope", "Keep wishing", "All truth is relative :flushed:", "brb commiting a mass genocide", "is israel a legitimate state?", "According to my sources, yes.", "It seems as though the only logical answer is yes."]
+    eightball_responses = ["Yes", "No", "Probably", "No way", "Yessir", "Not a chance", "idk ask obama", "Nope", "Keep wishing", "All truth is relative :flushed:", "brb commiting a mass genocide", "is israel a legitimate state?", "According to my sources, yes.", "It seems as though the only logical answer is yes."]
     if message.channel.id != music_channel_id:
         if message.content.startswith(tuple(eightball_prompts)):
             await channel.send(random.choice(eightball_responses))
