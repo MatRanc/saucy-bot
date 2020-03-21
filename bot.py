@@ -64,7 +64,7 @@ async def on_message(message):
             await general_channel.send(message.content)
 
     #eight ball
-    eightball_prompts = ["is", "Is", "8ball"]
+    eightball_prompts = ["is ", "Is ", "8ball "]
     eightball_responses = ["Yes", "No", "Probably", "No way", "Yessir", "Not a chance", "idk ask obama", "Nope", "Keep wishing", "All truth is relative :flushed:", "brb commiting a mass genocide", "is israel a legitimate state?", "According to my sources, yes.", "It seems as though the only logical answer is yes."]
     if message.channel.id != music_channel_id:
         if message.content.startswith(tuple(eightball_prompts)):
@@ -78,7 +78,7 @@ async def on_message(message):
 
     #send now playing dont care for certain people
     if message.author.id == 330462798817656847:
-        if random.randint(1,3) == 1:
+        if random.randint(1,6) == 1:
             await channel.send("now ᴘʟᴀʏɪɴɢ: Who Asked (Feat: Nobody Did) ───────────:white_circle:────── ◄◄⠀▐▐⠀►► 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼⠀───○ :loud_sound:")
         #print that the user(+tag) did not trigger the message
         else: print("user "+message.author.name+"#"+message.author.discriminator+" did not trigger the \"who asked\" function")
