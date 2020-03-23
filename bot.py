@@ -119,5 +119,4 @@ client.run(token_string)
     Todo:
     -allow channel id to be in a list (so that you cant only have one channel for ignoring messages)
     -make music channel id collection based off name and not channel id
-    -add different emojis for swag ratings
 '''
