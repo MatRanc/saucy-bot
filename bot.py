@@ -37,7 +37,7 @@ async def on_message(message):
     music_channel = client.get_channel(music_channel_id)
 
     #play command reminder
-    playCommands = ["/play", "//play", "!play", "?play", "/skip", "/queue"]
+    playCommands = ["/play", "//play", "!play", "?play", "/skip", "/queue", "-play", "~play"]
     if message.content.startswith(tuple(playCommands)):
         if message.channel.id != music_channel_id:
             await message.delete()
@@ -78,13 +78,13 @@ async def on_message(message):
 
     #send now playing dont care for certain people
     if message.author.id == 330462798817656847:
-        if random.randint(1,6) == 1:
+        if random.randint(1,25) == 1:
             await channel.send("now ᴘʟᴀʏɪɴɢ: Who Asked (Feat: Nobody Did) ───────────:white_circle:────── ◄◄⠀▐▐⠀►► 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼⠀───○ :loud_sound:")
         #print that the user(+tag) did not trigger the message
         else: print("user "+message.author.name+"#"+message.author.discriminator+" did not trigger the \"who asked\" function")
 
     #swag meter
-    swag_prompts = ["how swag is", "How swag is"]
+    swag_prompts = ["how swag is", "How swag is", "how swag are", "How swag are"]
     swag_random_number = random.randint(1, 101)
     if message.content.startswith(tuple(swag_prompts)):
         #0-20
