@@ -18,6 +18,7 @@ general_channel_id = 248966523190771714
 
 client = discord.Client()
 
+print("\nsaucybot v1.0 /// FWD Development\n")
 print("-------\nBot is live\nUse control+C to terminate\n-------")
 
 @client.event
@@ -57,11 +58,11 @@ async def on_message(message):
 
     #repeat anything said in #say to #general as bot
     if message.channel.id == say_channel_id:
-        if message.content.startswith("IGNORE"):
-            pass
-        else:
+        if message.content.startswith("say"):
             general_channel = client.get_channel(general_channel_id)
-            await general_channel.send(message.content)
+            await general_channel.send(message.content[3:])
+        else:
+            pass
 
     #eight ball
     eightball_prompts = ["is ", "Is ", "8ball "]
@@ -78,13 +79,13 @@ async def on_message(message):
 
     #send now playing dont care for certain people
     if message.author.id == 330462798817656847:
-        if random.randint(1,25) == 1:
+        if random.randint(1,50) == 1:
             await channel.send("now ᴘʟᴀʏɪɴɢ: Who Asked (Feat: Nobody Did) ───────────:white_circle:────── ◄◄⠀▐▐⠀►► 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼⠀───○ :loud_sound:")
         #print that the user(+tag) did not trigger the message
         else: print("user "+message.author.name+"#"+message.author.discriminator+" did not trigger the \"who asked\" function")
 
     #swag meter
-    swag_prompts = ["how swag is", "How swag is", "how swag are", "How swag are"]
+    swag_prompts = ["how swag", "How swag"]
     swag_random_number = random.randint(1, 101)
     if message.content.startswith(tuple(swag_prompts)):
         #0-20
