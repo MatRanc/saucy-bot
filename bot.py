@@ -19,7 +19,7 @@ general_channel_id = 248966523190771714
 
 client = discord.Client()
 
-print("\nsaucybot v1.0 /// FWD Development\n")
+print("\nsaucybot v1.1 /// FWD Development\n")
 print("-------\nBot is live\nUse control+C to terminate\n-------")
 
 
