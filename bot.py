@@ -2,6 +2,7 @@
 # https://github.com/MatRanc/saucy-bot
 import discord
 import random
+import sys
 import datetime
 from bot_token import token_string
 
@@ -153,7 +154,7 @@ async def on_message(message):
 # Check for bot token
 if not token_string:
     print("ERROR: A bot token is required to run.\nPlease get one from the Discord Developer Portal")
-    sys_exit()
+    sys.exit()
 
 # run
 client.run(token_string)
