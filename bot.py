@@ -41,8 +41,16 @@ async def on_message(message):
     music_channel = client.get_channel(music_channel_id)
 
     # play command reminder
-    playCommands = ["/play", "//play", "!play",
-                    "?play", "/skip", "/queue", "-play", "~play"]
+    playCommands = [
+        "/play",
+        "//play",
+        "!play",
+        "?play",
+        "/skip",
+        "/queue",
+        "-play",
+        "~play",
+    ]
     if message.content.startswith(tuple(playCommands)):
         if message.channel.id != music_channel_id:
             await message.delete()
