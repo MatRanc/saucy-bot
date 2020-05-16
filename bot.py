@@ -71,6 +71,26 @@ async def on_message(message):
         if message.content.startswith(tuple(eightball_prompts)):
             await channel.send(random.choice(eightball_responses))
 
+    #obama 8ball
+    obama_prompts = ["obama", 
+                    "Obama", 
+                    "Hey obama",
+                    "Hey Obama",
+                    "hey Obama", 
+                    "hey obama",
+                    ]
+    obama_responses = ["After consulting with Michelle, I'm going to say yes.", "uhhhhh Change. is never easy! but uhhhhh always possible.", 
+                        "The Middle East is obviously an issue that has plagued the region for centuries. So, yes.", 
+                        "You're absolutely right that John McCain has not talked about my Muslim faith... But to answer your question, no.", 
+                        "There is no reason anyone should own an AR-15, and there is no reason the answer is no.",
+                        "Yes. Obama Out.",
+                        "I'm really excited about the prospect of a woman president of the United States, but I'm less excited about that question because the answer is no.",
+                        ]
+    if message.channel.id != music_channel_id:
+        if message.content.startswith(tuple(obama_prompts)):
+            await channel.send("<:obama2:711101818784055327>")
+            await channel.send("\""+random.choice(obama_responses)+"\"")
+
     #if message contains, ping
     if "jacob" in message.content:
         if message_sender != bot_user_id:
