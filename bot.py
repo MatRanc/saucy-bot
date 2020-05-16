@@ -127,9 +127,11 @@ async def on_message(message):
                   " did not trigger the \"who asked\" function")
 
     # swag meter
-    swag_prompts = ["how swag", "How swag"]
+    swag_prompts = [
+        "how swag"
+    ]
     swag_random_number = random.randint(1, 101)
-    if message.content.startswith(tuple(swag_prompts)):
+    if message.content.lower.startswith(tuple(swag_prompts)):
         # 0-20
         if 20 >= swag_random_number >= 0:
             await channel.send("swag meter says "+str(swag_random_number)+"% swag :face_vomiting:")
