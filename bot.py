@@ -63,9 +63,7 @@ async def on_message(message):
 
     # bruh message
     if "bruh" in message.content:
-        if message.author.id == bot_user_id:
-            pass
-        else:
+        if message.author.id != bot_user_id:
             await channel.send("bruh")
 
     # repeat anything said in #say to #general as bot
@@ -132,8 +130,7 @@ async def on_message(message):
             await channel.send("now ᴘʟᴀʏɪɴɢ: Who Asked (Feat: Nobody Did) ───────────:white_circle:────── ◄◄⠀▐▐⠀►► 𝟸:𝟷𝟾 / 𝟹:𝟻𝟼⠀───○ :loud_sound:")
         # print that the user(+tag) did not trigger the message
         else:
-            print("user "+message.author.name+"#"+message.author.discriminator +
-                  " did not trigger the \"who asked\" function")
+            print("user "+message.author.name+"#"+message.author.discriminator +" did not trigger the \"who asked\" function")
 
     # swag meter
     swag_prompts = [
