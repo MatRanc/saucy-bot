@@ -98,7 +98,7 @@ async def on_message(message):
         "It seems as though the only logical answer is yes."
     ]
     if message.channel.id != music_channel_id:
-        if message.content.lower.startswith(tuple(eightball_prompts)):
+        if message.content.lower().startswith(tuple(eightball_prompts)):
             await channel.send(random.choice(eightball_responses))
 
     # obama 8ball
@@ -115,7 +115,7 @@ async def on_message(message):
         "I'm really excited about the prospect of a woman president of the United States, but I'm less excited about that question because the answer is no.",
     ]
     if message.channel.id != music_channel_id:
-        if message.content.lower.startswith(tuple(obama_prompts)):
+        if message.content.lower().startswith(tuple(obama_prompts)):
             await channel.send("<:obama2:711101818784055327>")
             await channel.send("\""+random.choice(obama_responses)+"\"")
 
@@ -140,7 +140,7 @@ async def on_message(message):
         "how swag"
     ]
     swag_random_number = random.randint(1, 101)
-    if message.content.lower.startswith(tuple(swag_prompts)):
+    if message.content.lower().startswith(tuple(swag_prompts)):
         # 0-20
         if 20 >= swag_random_number >= 0:
             await channel.send("swag meter says "+str(swag_random_number)+"% swag :face_vomiting:")
